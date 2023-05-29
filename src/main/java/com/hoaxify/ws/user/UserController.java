@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.hoaxify.ws.error.ApiError;
 import com.hoaxify.ws.shared.GenericResponse;
-
 import jakarta.validation.Valid;
 
 @RestController
