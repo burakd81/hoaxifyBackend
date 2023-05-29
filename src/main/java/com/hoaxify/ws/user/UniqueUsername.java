@@ -15,7 +15,7 @@ import java.lang.annotation.ElementType;
 @Constraint(validatedBy = {UniqueUsernameValidator.class}) //
 public @interface UniqueUsername {
 
-    String message() default "Username must be unique";
+    String message() default "{hoaxify.constraint.username.UniqueUsername.message}";
 
 	Class<?>[] groups() default { };
 

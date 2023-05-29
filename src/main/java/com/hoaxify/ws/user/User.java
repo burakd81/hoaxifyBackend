@@ -21,17 +21,17 @@ public class User {
     @GeneratedValue
     private Long id;
 
-    @NotNull
+    @NotNull(message = "{hoaxify.constraints.username.NotNull.message}")
     @UniqueUsername
     @Size(min = 4,max = 16)
     private String username;
 
-    @NotNull
+    @NotNull(message = "{hoaxify.constraints.displayName.NotNull.message}")
     private String displayName;
 
-    @NotNull
+    @NotNull(message = "{hoaxify.constraints.password.NotNull.message}")
     @Size(min=4)
-    @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).*$")
+    @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).*$" , message = "{hoaxify.constraints.password.Pattern.message}")
     private String password;
     
 }
