@@ -2,6 +2,9 @@ package com.hoaxify.ws.user;
 
 
 
+import com.fasterxml.jackson.annotation.JsonView;
+import com.hoaxify.ws.shared.Views;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -24,14 +27,19 @@ public class User {
     @NotNull(message = "{hoaxify.constraints.username.NotNull.message}")
     @UniqueUsername
     @Size(min = 4,max = 16)
+    @JsonView(Views.Base.class)
     private String username;
 
     @NotNull(message = "{hoaxify.constraints.displayName.NotNull.message}")
+    @JsonView(Views.Base.class)
     private String displayName;
 
     @NotNull(message = "{hoaxify.constraints.password.NotNull.message}")
     @Size(min=4)
     @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).*$" , message = "{hoaxify.constraints.password.Pattern.message}")
     private String password;
+
+    @JsonView(Views.Base.class)
+    private String image;
     
 }
